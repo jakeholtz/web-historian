@@ -18,4 +18,5 @@ exports.serveAssets = function(res, asset, callback) {
 
 
 
-// As you progress, keep thinking about what helper functions you can put here!
+// As you progress, keep thinking about what helper functions you can put here
+  // Today is Thursday!

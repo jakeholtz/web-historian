@@ -24,14 +24,33 @@ exports.initialize = function(pathsObj) {
 
 // The following function names are provided to you to suggest how you might
 // modularize your code. Keep it clean!
-
 exports.readListOfUrls = function(callback) {
+  fs.readFile(this.paths.list, function (err, data) {
+    if (err) {
+      return console.error(err);
+    } else {
+      var urls = data.toString().split('\n');
+      callback(urls);
+    }
+  });
 };
 
 exports.isUrlInList = function(url, callback) {
-};
+  fs.readFile(this.paths.list, function (err, data) {
+    if (err) {
+      return console.error(err);
+    } else {
+      var urls = data.toString().split('\n');
+      _.contains(urls, url) ? callback(true) : callback(false);
+    }
+  });
+}; 
 
 exports.addUrlToList = function(url, callback) {
+  // locate sites url via path function
+  // apply callback to url
+  // add callbacked url to sites
+
 };
 
 exports.isUrlArchived = function(url, callback) {
